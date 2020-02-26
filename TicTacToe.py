@@ -32,7 +32,7 @@ if __name__ == "__main__":
     turn_played = 0
     current_player = ""
 
-    while turn_played < 9:
+    while turn_played <=9:
 
         print_space()
         game.draw_board()
@@ -42,9 +42,10 @@ if __name__ == "__main__":
             current_player = "O"
         print(current_player+" inserts your next move")
         move = input()
-        if move not in range(1, 9):
+        move = int(move)
+        if move not in range(1, 10):
             print("Input not recognised, please try again")
-            break
+            continue
         elif game.insert_symbol(move, current_player):
             turn_played += 1
         else:
