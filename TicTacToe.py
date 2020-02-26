@@ -30,6 +30,26 @@ if __name__ == "__main__":
     print_welcome_message()
     game = Game.Game()
     turn_played = 0
+    current_player = ""
+
+    while turn_played < 9:
+
+        print_space()
+        game.draw_board()
+        if turn_played % 2 == 0:
+            current_player = "X"
+        else:
+            current_player = "O"
+        print(current_player+" inserts your next move")
+        move = input()
+        if move not in range(1, 9):
+            print("Input not recognised, please try again")
+            break
+        elif game.insert_symbol(move, current_player):
+            turn_played += 1
+        else:
+            print("Invalid move, please try again")
+
 
 
 
