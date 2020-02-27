@@ -10,6 +10,9 @@ class Game:
     def get_board(self):
         return self._board
 
+    def get_empty_symbol(self):
+        return self._empty
+
     def draw_board(self):
         t = 0
         for i in range(3):
