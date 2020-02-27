@@ -27,6 +27,9 @@ class Game:
         self._board[position-1] = self._space + symbol + self._space
         return True
 
+    def remove_symbol(self, position):
+        self._board[position] = self._empty
+        
     def _check_rows(self):
         t = 0
         for i in range(3):
