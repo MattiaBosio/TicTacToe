@@ -21,4 +21,27 @@ class Game:
         self._board[position-1] = self._space + symbol + self._space
         return True
 
+    def _check_rows(self):
+        t = 0
+        for i in range(3):
+            if self._board[t] == self._board[t + 1] and self._board[t + 1] == self._board[t + 2]:
+                return True
+            t = t + 3
+        return False
 
+    def _check_columns(self):
+        t = 0
+        for i in range(3):
+            if self._board[t] == self._board[t + 3] and self._board[t + 3] == self._board[t + 6]:
+                return True
+            t = t + 1
+        return False
+
+    def _check_diagonals(self):
+
+        return (self._board[0] == self._board[4] and self._board[4] == self._board[8]) or \
+               (self._board[2] == self._board[4] and self._board[4] == self._board[6])
+
+    def check_game_status(self):
+
+        return self._check_rows() or self._check_columns() or self._check_diagonals()
