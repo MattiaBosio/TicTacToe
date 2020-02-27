@@ -32,7 +32,7 @@ if __name__ == "__main__":
     turn_played = 0
     current_player = ""
 
-    while turn_played <=9:
+    while turn_played <= 9:
 
         print_space()
         game.draw_board()
@@ -47,6 +47,12 @@ if __name__ == "__main__":
             print("Input not recognised, please try again")
             continue
         elif game.insert_symbol(move, current_player):
+            if turn_played >= 5:
+                if game.check_game_status():
+                    print("## The winner is player " + current_player+" ##")
+                    break
+                elif turn_played == 9:
+                    print("~~ It's a tie!! ~~")
             turn_played += 1
         else:
             print("Invalid move, please try again")
