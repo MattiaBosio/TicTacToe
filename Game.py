@@ -7,8 +7,8 @@ class Game:
         self._bar = "|"
         self._line = "-----------"
 
-    def get_board(self):
-        return self._board
+    def set_board(self, board):
+        self._board = board
 
     def get_empty_symbol(self):
         return self._empty
