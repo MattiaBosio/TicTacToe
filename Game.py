@@ -2,10 +2,10 @@ class Game:
 
     def __init__(self):
         self._space = " "
-        self._empty = "    "
+        self._empty = "   "
         self._board = [self._empty] * 9
         self._bar = "|"
-        self._line = "--------------"
+        self._line = "-----------"
 
     def draw_board(self):
         t = 0

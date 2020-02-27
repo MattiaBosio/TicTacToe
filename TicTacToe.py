@@ -13,12 +13,12 @@ def print_welcome_message():
 
 
 def print_demo():
-
-    print(" 1 " + "|" + " 2 " + "|" + " 3 ")
-    print("------------")
-    print(" 4 " + "|" + " 5 " + "|" + " 6 ")
-    print("------------")
-    print(" 7 " + "|" + " 8 " + "|" + " 9 ")
+    t = 0
+    for i in range(3):
+        print(" "+str(t)+" "+"|"+" "+str(t+1)+" "+"|"+" "+str(t+2)+" ")
+        t = t + 3
+        if i != 2:
+            print("-----------")
 
 
 def print_space():
