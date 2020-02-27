@@ -1,4 +1,5 @@
 import Game
+import AlphaBetaAlgorithm
 
 
 def print_welcome_message():
@@ -29,6 +30,7 @@ def print_space():
 if __name__ == "__main__":
     print_welcome_message()
     game = Game.Game()
+    player = AlphaBetaAlgorithm.AlphaBetaAlgorithm("O", "X")
     turn_played = 0
     current_player = ""
 
@@ -39,11 +41,14 @@ if __name__ == "__main__":
 
         if turn_played % 2 == 0:
             current_player = "X"
+            move = int(input(current_player + " inserts your next move: "))
         else:
             current_player = "O"
-        print(current_player+" inserts your next move")
-        move = input()
-        move = int(move)
+            g = Game.Game()
+            g.set_board(game.get_board()[:])
+            move = player.make_move(g, turn_played)
+            move += 1
+
         if move not in range(1, 10):
             print("Input not recognised, please try again")
             continue
@@ -59,7 +64,9 @@ if __name__ == "__main__":
                     break
             turn_played += 1
         else:
+            print(move)
             print("Invalid move, please try again")
+            break
         game.draw_board()
 
 
