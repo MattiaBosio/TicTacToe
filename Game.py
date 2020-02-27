@@ -7,6 +7,9 @@ class Game:
         self._bar = "|"
         self._line = "-----------"
 
+    def get_board(self):
+        return self._board
+
     def draw_board(self):
         t = 0
         for i in range(3):
