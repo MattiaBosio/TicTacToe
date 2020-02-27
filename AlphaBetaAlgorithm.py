@@ -58,5 +58,9 @@ class AlphaBetaAlgorithm:
 
                 if maxv > alpha:
                     alpha = maxv
-                    
+
         return maxv, move
+
+    def make_move(self, game_status: Game, turn):
+        self.set_game(game_status)
+        return self.max(-2, 2, turn)[1]
