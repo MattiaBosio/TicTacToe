@@ -37,5 +37,26 @@ class AlphaBetaAlgorithm:
         return minv, move
 
     def max(self, alpha, beta, turn):
+        maxv = -2
+        move = None
+        if self._game.check_game_status():
+            return -1, 0
+        elif turn == 8:
+            return 0, 0
 
-        return 0, 0
+        for i in range(9):
+            if self._game.insert_symbol(i, self._max_symbol):
+                (m, min_move) = self.min(alpha, beta, turn + 1)
+
+                if m > maxv:
+                    maxv = m
+                    move = i
+                self._game.remove_symbol(i)
+
+                if maxv >= beta:
+                    return maxv, move
+
+                if maxv > alpha:
+                    alpha = maxv
+                    
+        return maxv, move
