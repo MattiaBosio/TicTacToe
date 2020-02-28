@@ -7,6 +7,15 @@ class Game:
         self._bar = "|"
         self._line = "-----------"
 
+    def get_board(self):
+        return self._board
+
+    def set_board(self, board):
+        self._board = board
+        
+    def get_empty_symbol(self):
+        return self._empty
+
     def draw_board(self):
         t = 0
         for i in range(3):
@@ -16,11 +25,14 @@ class Game:
                 print(self._line)
 
     def insert_symbol(self, position, symbol):
-        if self._board[position-1] != self._empty:
+        if self._board[position] != self._empty:
             return False
-        self._board[position-1] = self._space + symbol + self._space
+        self._board[position] = self._space + symbol + self._space
         return True
 
+    def remove_symbol(self, position):
+        self._board[position] = self._empty
+        
     def _check_rows(self):
         t = 0
         for i in range(3):
