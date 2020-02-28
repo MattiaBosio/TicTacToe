@@ -66,6 +66,7 @@ if __name__ == "__main__":
             print("Invalid move, please try again")
 
         game.draw_board()
+        print_space()
 
 
 
