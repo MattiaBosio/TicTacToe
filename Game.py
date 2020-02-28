@@ -25,9 +25,9 @@ class Game:
                 print(self._line)
 
     def insert_symbol(self, position, symbol):
-        if self._board[position-1] != self._empty:
+        if self._board[position] != self._empty:
             return False
-        self._board[position-1] = self._space + symbol + self._space
+        self._board[position] = self._space + symbol + self._space
         return True
 
     def remove_symbol(self, position):

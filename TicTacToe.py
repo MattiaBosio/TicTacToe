@@ -41,13 +41,12 @@ if __name__ == "__main__":
 
         if turn_played % 2 == 0:
             current_player = "X"
-            move = int(input(current_player + " inserts your next move: "))
+            move = int(input(current_player + " inserts your next move: ")) - 1
         else:
             current_player = "O"
             g = Game.Game()
             g.set_board(game.get_board()[:])
             move = player.make_move(g, turn_played)
-            move += 1
 
         if move not in range(1, 10):
             print("Input not recognised, please try again")
