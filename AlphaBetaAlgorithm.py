@@ -7,7 +7,7 @@ class AlphaBetaAlgorithm:
         self._max_symbol = max_symbol
         self._min_symbol = min_symbol
         self._game = None
-        
+
     def set_game(self, game: Game):
         self._game = game
 
@@ -44,7 +44,8 @@ class AlphaBetaAlgorithm:
             return 0, 0
 
         for i in range(9):
-            if self._game.insert_symbol(i, self._max_symbol):
+            check = self._game.insert_symbol(i, self._max_symbol)
+            if check:
                 (m, min_move) = self.min(alpha, beta, turn + 1)
 
                 if m > maxv:

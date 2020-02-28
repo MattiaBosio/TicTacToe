@@ -48,7 +48,7 @@ if __name__ == "__main__":
             g.set_board(game.get_board()[:])
             move = player.make_move(g, turn_played)
 
-        if move not in range(1, 10):
+        if move not in range(91):
             print("Input not recognised, please try again")
             continue
         elif game.insert_symbol(move, current_player):
@@ -63,9 +63,8 @@ if __name__ == "__main__":
                     break
             turn_played += 1
         else:
-            print(move)
             print("Invalid move, please try again")
-            break
+
         game.draw_board()
 
 
