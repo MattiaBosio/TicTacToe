@@ -52,14 +52,16 @@ if __name__ == "__main__":
         else:
             current_player = "O"
             g = Game.Game()
-            g.set_board(game.get_board()[:])
+            g.set_board(game.get_board()[:])    # a new game, with a copy of the original board, is created
+            # so that it can be exploited by the AlphaBeta algorithm without affecting the state of the original game
             move = player.make_move(g, turn_played)
 
         if move not in range(9):
             print("Input not recognised, please try again")
             continue
         elif game.insert_symbol(move, current_player):
-            if turn_played >= 4:
+            if turn_played >= 4:        # the game can end only after at least for phases. In the first three, this
+                # control is not necessary.
                 if game.check_game_status():
                     game.draw_board()
                     print("## The winner is player " + current_player+" ##")
