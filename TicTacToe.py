@@ -1,8 +1,12 @@
 import Game
 import AlphaBetaAlgorithm
 
+"""Main of TicTacToe application"""
+
 
 def print_welcome_message():
+    """It displays the welcome message of the game and a brief tutorial about it."""
+
     print("** Welcome to TicTacToe !! **")
     print("Player one: X is your symbol")
     print("Player two: O is your symbol")
@@ -14,6 +18,7 @@ def print_welcome_message():
 
 
 def print_demo():
+    """It displays how the board will look like during the game."""
     t = 0
     for i in range(3):
         print(" "+str(t)+" "+"|"+" "+str(t+1)+" "+"|"+" "+str(t+2)+" ")
@@ -23,6 +28,8 @@ def print_demo():
 
 
 def print_space():
+    """It prints two empty lines, used in order to obtain a clearer visualization of the output."""
+    # TODO make the method more modular : pass the number of white lines as parameter and use a for loop.
     print("")
     print("")
 
