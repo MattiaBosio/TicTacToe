@@ -2,6 +2,25 @@ from Game import Game
 
 
 class AlphaBetaAlgorithm:
+    """
+    A class which represents the alpha beta pruning algorithm used in adversarial search.
+
+    ...
+
+    Attributes
+    ----------
+
+    _max_symbol : str
+        a formatted string which represents the symbol associated to max player(the artificial player)
+
+    _min_symbol : str
+        a formatted string which represents the symbol associated to min player(the human player)
+
+    _game : Game
+        an instance of Game class which represents the root node of the search tree on which the algorithm is started
+
+
+    """
 
     def __init__(self, max_symbol, min_symbol):
         self._max_symbol = max_symbol
